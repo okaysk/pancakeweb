@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from "next/image";
 import Avatar from "../components/Avatar";
 import { MenuIcon } from "@heroicons/react/outline";
-
+import { ArrowRightIcon } from "@heroicons/react/outline";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
           <MenuIcon className="h-10 w-10 p-2 transition duration-150 transform hover:scale-110 cursor-pointer"/>
           {/* Icon */}
           <Avatar url="https://image.flaticon.com/icons/png/512/3009/3009983.png" />
-          <p className="hidden sm:inline-flex link text-lg">PancakeSwab</p>
+          <p className="hidden sm:inline-flex link text-lg">PancakeSwap</p>
           {/* <Image src="/images/logo.png" height={100} width={300} /> */}
         </div>
         {/* Right */}
@@ -37,19 +37,19 @@ export default function Home() {
 
       <body className="bg-gray-100">
         {/* First */}
-        <div className="flex flex-col justify-center items-center py-10">
+        <div className="flex flex-col justify-center items-center py-10 bg-blue-200">
           <Avatar url="https://en.pimg.jp/066/456/337/1/66456337.jpg"/>
-          <h1 className="text-3xl  font-bold text-purple-800 mt-0 mb-2 leading-normal">PancakeSwab</h1>
+          <h1 className="text-5xl  font-bold text-purple-800 mt-0 mb-2 leading-normal">PancakeSwap</h1>
           <p>The #1 AMM and yield farm on Binance Smart Chain.</p>
 
         </div>
 
         {/* Second */}
-        <div className="flex sm:flex-col lg:flex md:flex">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 grid-flow-row-dense px-8 bg-yellow-200">
           {/* Farms & Staking */}
-          <div className="flex flex-col bg-white justify-center px-6 py-5 rounded-lg m-10">
+          <div className="flex flex-col justify-center bg-white px-6 py-5 rounded-lg m-10">
             <div>
-              <h2 className="text-3xl font-bold text-indigo-900">Farms & Staking</h2>
+              <h2 className="text-4xl font-bold text-indigo-900">Farms & Staking</h2>
               <img className="py-4 rounded-lg" src="https://as1.ftcdn.net/jpg/01/66/50/68/500_F_166506838_2fbBwcQIbnkvnYeQYTFbFZSFE8UTWy4O.jpg" alt="cake logo" width={64} height={64}/>
               <div className="pb-8">
                 <p className="text-lg py-1 text-purple-400">CAKE to Harvest:</p>
@@ -68,8 +68,8 @@ export default function Home() {
           {/* Your Lottery Winnings */}
           <div className="flex flex-col justify-center bg-white px-6 py-5 rounded-lg m-10">
             <div>
-              <h2 className="text-3xl font-bold text-indigo-900">Your Lottery Winnings</h2>
-              <img className="py-4" src="https://as1.ftcdn.net/jpg/01/66/50/68/500_F_166506838_2fbBwcQIbnkvnYeQYTFbFZSFE8UTWy4O.jpg" alt="cake logo" width={64} height={64}/>
+              <h2 className="text-4xl font-bold text-indigo-900">Your Lottery Winnings</h2>
+              <img className="py-4" src="https://cdn4.iconfinder.com/data/icons/casino-games-1/512/Lottery_Wheel-256.png" alt="cake logo" width={64} height={64}/>
               <div className="pb-8">
                 <p className="text-lg py-1 text-purple-400">CAKE to Collect:</p>
                 <p className="text-sm py-1 text-gray-500">Locked</p>
@@ -86,23 +86,71 @@ export default function Home() {
         </div>
 
         {/* 3 Rows */}
-        <div className="flex space-x-4">
-          
-          <div className="flex flex-col justify-center bg-white px-6 py-5 rounded-lg m-10">
-            <p className="text-xl font-bold text-indigo-900">Earn up to</p>
-            <p className="text-2xl font-bold text-purple-700">281.32%</p>
-            <p className="text-xl font-bold text-indigo-900 pb-5">APR in Farms</p>
-          </div>
-          <div className="flex flex-col justify-center bg-gradient-to-r from-green-400 to-blue-500 px-6 py-5 rounded-lg m-10">
-            <p className="text-xl font-bold text-indigo-900">Earn</p>
-            <p className="text-2xl font-bold text-white">CAKE, XEND, HGET, HOTCROSS</p>
-            <p className="text-xl font-bold text-indigo-900 pb-5">in Pools</p>
-          </div>
-          <div className="flex flex-col justify-center bg-white px-6 py-5 rounded-lg m-10">
-            <p className="text-xl font-bold text-indigo-900">Lottery</p>
-            <p className="text-2xl font-bold text-purple-700">Coming Soon</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-2 grid-flow-row-dense px-8 bg-red-200">
+          {/* Earn up to */}
+          <div className="btn flex flex-col justify-center bg-white px-6 py-5 rounded-lg m-10">
+            <a href="/farms">
+              <p className="text-2xl font-bold text-indigo-900">Earn up to</p>
+              <p className="text-4xl font-bold text-purple-700">281.32%</p>
+              <div>
+                <p className="text-2xl font-bold text-indigo-900">APR in Farms</p>
+                <ArrowRightIcon className="float-right h-5 mr-1 text-green-300"/>
+              </div>  
+            </a>
           </div>
 
+          {/* Earn */}
+          <div className="btn flex flex-col justify-center bg-gradient-to-r from-green-400 to-blue-500 px-6 py-5 rounded-lg m-10">
+            <a href="/pools">
+              <p className="text-2xl font-bold text-indigo-900">Earn</p>
+              <p className="text-4xl font-bold text-white">CAKE, XEND, HGET, HOTCROSS</p>
+              <div>
+                <p className="text-2xl font-bold text-indigo-900">in Pools</p>
+                <ArrowRightIcon className="float-right h-5 mr-1 text-green-300"/>
+              </div>  
+            </a>
+          </div>
+
+          {/* Lottery */}
+          <div className="btn flex flex-col justify-center bg-white px-6 py-5 rounded-lg m-10">
+            <a href="/lottery">
+              <p className="text-2xl font-bold text-indigo-900">Lottery</p>
+              <p className="text-4xl font-bold text-purple-700">Coming Soon</p>
+              <div>
+                <p className="text-2xl font-bold text-indigo-900"></p>
+                <ArrowRightIcon className="float-right h-5 mr-1 text-green-300"/>
+              </div>  
+            </a>
+          </div>
+        </div>
+
+        {/* 2 Rows */}
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-flow-row-dense">
+          {/* Cake Stats */}
+          <div className="flex flex-col w-sm-full justify-center bg-white px-6 py-5 rounded-lg m-10">
+            <div>
+              <p className="text-4xl font-bold text-indigo-900 pb-5">Cake Stats</p>
+              <div className="flex justify-between pb-3">
+                <p className="text-sm text-indigo-900">Total CAKE Supply</p>
+                <p className="text-sm text-indigo-900 font-bold">172,073,683</p>
+              </div>
+              <div className="flex justify-between pb-3">
+                <p className="text-sm text-indigo-900">Total CAKE Burned</p>
+                <p className="text-sm text-indigo-900 font-bold">130,776,482</p>
+              </div>
+              <div className="flex justify-between pb-3">
+                <p className="text-sm text-indigo-900">New CAKE/block</p>
+                <p className="text-sm text-indigo-900 font-bold">20</p>
+              </div>
+            </div>
+          </div>
+          {/* Total Value Locked */}
+          <div className="flex flex-col w-sm-full justify-center bg-white px-6 py-5 rounded-lg m-10">
+            <div>
+              <p className="text-2xl font-bold text-indigo-900 pb-5">Total Value Locked(TVL)</p>
+              <div className="bg-gray-200 animate-pulse w-64 h-16 rounded-lg"></div>
+            </div>
+          </div>
         </div>
         
       </body>
