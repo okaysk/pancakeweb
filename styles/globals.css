@@ -16,4 +16,43 @@
     @apply bg-[#f8f9fa] p-3 rounded-md ring-gray-200 text-sm text-gray-800 
     hover:ring-1 focus:outline-none hover:opacity-80 active:ring-gray-300 shadow-md;
   }
+
+
+  /* .menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  } */
+
+  .sidebar-menu {
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 100;
+    /* left: -100%; */
+    /* transition: 1850ms; */
+    background: #F3F4F6;
+  }
+
+  .sidebar-menu.active {
+    left: 0;
+    /* transition: 1350ms; */
+  }
+
+  .sidebar-menu-items{
+    width: 100%;
+    
+  }
+
+  .sidebar-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+    
+  }
 }

@@ -10,12 +10,20 @@ import Icon from '@material-ui/core/Icon';
 
 import { useState } from "react";
 
+import { SideBarData } from "../components/SideBar";
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { FormatTextdirectionLToRSharp } from '@material-ui/icons';
+
+import * as AiIcons from 'react-icons/io';
+
+
 export default function Home() {
-  const [showMe, setShowMe] = useState(false);
+  const [showSideBar, setshowSideBar] = useState(false);
 
   function toggle(){
-    () => setShowMe(!showMe);
-    // showMe = !showMe;
+    setshowSideBar(!showSideBar);
+    // showSideBar = !showSideBar;
   }
 
   return (
@@ -26,7 +34,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"/>
-
       </Head>
 
       {/* Header */}
@@ -37,7 +44,7 @@ export default function Home() {
           <div className="flex space-x-4 items-center">
             {/* Menu Button */}
             <button onClick={toggle} >
-              {showMe ? <MenuAlt1Icon className="h-10 w-10 p-2 transition duration-150 transform hover:scale-110 cursor-pointer"/> : <MenuIcon className="h-10 w-10 p-2 transition duration-150 transform hover:scale-110 cursor-pointer"/>}
+              {showSideBar ? <MenuAlt1Icon className="h-10 w-10 p-2 transition duration-150 transform hover:scale-110 cursor-pointer"/> : <MenuIcon className="h-10 w-10 p-2 transition duration-150 transform hover:scale-110 cursor-pointer"/>}
             </button>
 
             {/* Pancake Logo */}
@@ -45,10 +52,9 @@ export default function Home() {
               <Avatar url="https://image.flaticon.com/icons/png/512/3009/3009983.png" />
               <p className="hidden sm:inline-flex link text-lg">PancakeSwap</p>
             </a>
-            {/* <Image src="/images/logo.png" height={100} width={300} /> */}
           </div>
-          {/* Right */}
 
+          {/* Right */}
           <div className="flex space-x-4 items-center">
             {/* Icon */}
             <button className="link bg-green-300 py-1 px-2 text-white font-bold rounded-full hover:bg-green-200">Address</button>
@@ -65,38 +71,44 @@ export default function Home() {
       {/* Body */}
       <body className="bg-gray-100 flex">
         {/* 1. Menu Bar */}
-        <div style={{ display: showMe ? "block" : "none" }} className="transition duration-150">
-          <div className="헤더빼고">
-            <div>
-              <a href="/">
-                <HomeIcon className="h-12 w-12 px-2 bg-red-200 hover:bg-gray-200 border-l-4 border-indigo-900" />
-              </a>
-            </div>
-
-            <div>
-              <a href="/">
-                {/* <Icon className="border-transparent border-l-4 h-12 w-12 bg-blue-200 hover:bg-gray-200" fontSize="large">swap_horiz</Icon> */}
-                <img className="h-12 w-12 p-2 hover:bg-gray-200 focus:border-l-4 border-transparent border-indigo-900" src="https://image.flaticon.com/icons/png/512/2223/2223769.png" />
-              </a>
-            </div>
-            <div className="display: place-items:center">
-              <a href="/">
+        <div style={{ display: showSideBar ? "block" : "none" }} className="z-50 transition duration-150">
+          <div>
+            <nav className={showSideBar? 'sidebar-menu active' : 'sidebar-menu'}>
+              <div className="sidebar-menu-items flex flex-col justify-between">
                 <div>
-                  {/* <Icon className="h-12 w-12 hover:bg-gray-200 focus:border-l-4 border-transparent  border-indigo-900" fontSize="large">agriculture</Icon> */}
-                  <img className="h-12 w-12 p-2 hover:bg-gray-200 focus:border-l-4 border-transparent border-indigo-900" src="https://image.flaticon.com/icons/png/512/2223/2223769.png" />
-
+                  {SideBarData.map((item, index) => {
+                    return (
+                      <div className="flex items-center hover:bg-gray-200">
+                        <div key={index} className={`$item.cName link border-transparent border-l-4 h-14 w-14 p-3`}>
+                          {item.icon}
+                        </div>
+                        <div>
+                          {item.title}
+                        </div>
+                      </div>
+                      
+                    )
+                  })}
                 </div>
-              {/* <span class="material-icons-outlined">agriculture</span> */}
-              </a>
-            </div>
-            
 
+                {/* 아래쪽 */}
+                <div>
+                  <div>
+                    <a>
+                      <Avatar url="https://en.pimg.jp/066/456/337/1/66456337.jpg" className="h-5 w-5"/>
+                      <div className="text-sm font-bold">$17,264</div>
+                    </a>
+                  </div>
+                  <div></div>
+                </div>
+
+              </div>
+            </nav>
           </div>
-          
         </div>
         
         {/* 2. Contents */}
-        <div>
+        <div className={showSideBar ? "opacity-80" : ""}>
           {/* First */}
           <div className="flex flex-col justify-center items-center py-10 bg-blue-200">
             <Avatar url="https://en.pimg.jp/066/456/337/1/66456337.jpg"/>
