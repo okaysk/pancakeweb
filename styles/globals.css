@@ -27,13 +27,13 @@
   .sidebar-menu {
     width: 250px;
     height: 100vh;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     position: fixed;
-    top: 100;
+    /* top: 100; */
     /* left: -100%; */
-    /* transition: 1850ms; */
-    background: #F3F4F6;
+    /* transition: 850ms; */
+    background: #FFFFFF;
   }
 
   .sidebar-menu.active {
@@ -42,8 +42,10 @@
   }
 
   .sidebar-menu-items{
+    /* display: flex; */
+    /* flex-flow: column wrap; */
+    /* justify-content: space-between; */
     width: 100%;
-    
   }
 
   .sidebar-text {

@@ -4,18 +4,19 @@ import Avatar from "../components/Avatar";
 import { MenuIcon } from "@heroicons/react/outline";
 import { MenuAlt1Icon } from '@heroicons/react/outline';
 import { ArrowRightIcon } from "@heroicons/react/outline";
+import { HomeIcon } from "@heroicons/react/solid";
+import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
+import Icon from '@material-ui/core/Icon';
 
 import { useState } from "react";
 
 import { SideBarData } from "../components/SideBar";
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { FormatTextdirectionLToRSharp } from '@material-ui/icons';
 
-import NavBar from '../components/NavBar';
+import * as AiIcons from 'react-icons/io';
 
-
-/*
-    TODO: 김프가 채팅. 김프가 차트.
-
-*/
 
 export default function Home() {
   const [showSideBar, setshowSideBar] = useState(false);
@@ -36,7 +37,7 @@ export default function Home() {
       </Head>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white">
+      <header>
         {/* TODO: Navigation */}
         <nav className="flex w-full p-5 justify-between">
           {/* Left */}
@@ -61,15 +62,16 @@ export default function Home() {
             <Avatar url="https://cdn4.iconfinder.com/data/icons/happy-easter-5/64/easter_rabbit_bunny_holiday_animal_happy_cute-512.png" />
           </div>
         </nav>
+
       </header>
 
-      {/* Body */}
-      <body className="bg-gray-100">
 
-        {/* 1. SideMenu Bar */}
-        <div style={{ display: showSideBar ? "block" : "none" }} className="transition duration-150">
+      {/* Body */}
+      <body className="bg-gray-100 flex">
+        {/* 1. Menu Bar */}
+        <div style={{ display: showSideBar ? "block" : "none" }} className="z-50 transition duration-150">
           <div>
-            <nav className={showSideBar? 'sidebar-menu active z-50' : 'sidebar-menu'}>
+            <nav className={showSideBar? 'sidebar-menu active' : 'sidebar-menu'}>
               <div className="sidebar-menu-items flex flex-col justify-between">
                 <div>
                   {SideBarData.map((item, index) => {
@@ -90,13 +92,10 @@ export default function Home() {
                 {/* 아래쪽 */}
                 <div>
                   <div>
-                    <a className="flex space-x-2 m-4">
+                    <a>
                       <Avatar url="https://en.pimg.jp/066/456/337/1/66456337.jpg" className="h-5 w-5"/>
                       <div className="text-sm font-bold">$17,264</div>
                     </a>
-                    <div>
-                      
-                    </div>
                   </div>
                   <div></div>
                 </div>
@@ -107,7 +106,7 @@ export default function Home() {
         </div>
         
         {/* 2. Contents */}
-        <div>
+        <div className={showSideBar ? "opacity-80" : ""}>
           {/* First */}
           <div className="flex flex-col justify-center items-center py-10 bg-blue-200">
             <Avatar url="https://en.pimg.jp/066/456/337/1/66456337.jpg"/>
