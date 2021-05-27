@@ -5,77 +5,80 @@ import * as FaIcons from 'react-icons/fa';
 import * as GiIcons from 'react-icons/gi';
 import * as RiIcons from 'react-icons/ri';
 
+const iconSize = 22;
+
 export const SideBarData = [
+    
     {
         title: 'Home',
         path: '/',
-        icon: <AiIcons.AiFillHome />,
+        icon: <AiIcons.AiFillHome size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Trade',
         path: '/trade',
-        icon: <FaIcons.FaExchangeAlt />,
+        icon: <FaIcons.FaExchangeAlt size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Farms',
         path: '/farm',
-        icon: <GiIcons.GiFarmer />,
+        icon: <GiIcons.GiFarmer size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Pools',
         path: '/pool',
-        icon: <GiIcons.GiBrandyBottle />,
+        icon: <GiIcons.GiBrandyBottle size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Prediction (BETA)',
         path: '/prediction',
-        icon: <GiIcons.GiSunglasses />,
+        icon: <GiIcons.GiSunglasses size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Lottery',
         path: '/lottery',
-        icon: <GiIcons.GiPerspectiveDiceSixFacesRandom />,
+        icon: <GiIcons.GiPerspectiveDiceSixFacesRandom size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Collectibles',
         path: '/collectible',
-        icon: <AiIcons.AiFillCopyrightCircle />,
+        icon: <AiIcons.AiFillCopyrightCircle size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Team Battle',
         path: '/teambattle',
-        icon: <GiIcons.GiTrophyCup />,
+        icon: <GiIcons.GiTrophyCup size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Teams & profile',
         path: '/teamsandprofile',
-        icon: <RiIcons.RiTeamFill />,
+        icon: <RiIcons.RiTeamFill size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'Info',
         path: '/info',
-        icon: <FaIcons.FaInfoCircle />,
+        icon: <FaIcons.FaInfoCircle size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'IFO',
         path: '/ifo',
-        icon: <FaIcons.FaBitcoin />,
+        icon: <FaIcons.FaBitcoin size={iconSize}/>,
         cName: 'sidebar-text',
     },
     {
         title: 'More',
         path: '/more',
-        icon: <FiIcons.FiMoreHorizontal />,
+        icon: <FiIcons.FiMoreHorizontal size={iconSize}/>,
         cName: 'sidebar-text',
     },
 
